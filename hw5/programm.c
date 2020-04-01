@@ -13,10 +13,10 @@ void push(Node **head, int data) {
     *head = tmp;
 }
 
-void printFromBegin(const Node *head){
+void printFromTail(const Node *head) {
     if (head) {
+        printFromTail(head->next);
         printf("%d ", head->value);
-
     }
 }
 
@@ -40,15 +40,14 @@ int main()
         printf("\n");
 
         if(command == '1'){
-            printf("You chose : Create the first element of a singly linked list");
+            printf("You chose : Create the first element of a singly linked list\n");
             Node *head = NULL;
 
-            for(int i = 0; i < 10; i++) {
+            for(int i = 0; i < 1; i++) {
                 push(&head, i + 1);
             }
 
-            printFromBegin(head); putchar('\n');
-            break;
+            printFromTail(head);
 
         }
 

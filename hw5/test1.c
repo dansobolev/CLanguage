@@ -1,46 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef int Data;
-
 typedef struct Node {
-    Data data;
-    struct Node* next;
-}   Node;
+    int value;
+    struct Node *next;
+} Node;
 
-//-----------------------------------------------------------------------------
-void push(Node** list, const Data data) {
-    Node* node = malloc(sizeof(Node));
-    node->data = data;
-    node->next = *list;
-    *list = node;
+void push(Node **head, int data) {
+    Node *tmp = (Node*) malloc(sizeof(Node));
+    tmp->value = data;
+    tmp->next = (*head);
+    (*head) = tmp;
 }
-//-----------------------------------------------------------------------------
-void printFromHead(const Node* list) {
-    if (list) {
-        printf("%d ", list->data);
-        printFromHead(list->next);
-    }
-}
-//-----------------------------------------------------------------------------
-void printFromTail(const Node* list) {
-    if (list) {
-        printFromTail(list->next);
-        printf("%d ", list->data);
-    }
-}
-//-----------------------------------------------------------------------------
 
-int main() {
-    int i;
-    Node* list = NULL;
+int main(){
+    Node *head = NULL;
 
-    for (i = 0; i < 10; ++i) {
-        push(&list, i + 1);
+    int *ukaz = {1,2,3,4,5};
+
+
+    for(int i=0; i<5; i++){
+        printf("%d", head.value);
+        *ukaz++;
     }
-
-    printFromHead(list); putchar('\n');
-    printFromTail(list); putchar('\n');
 
     return 0;
 }

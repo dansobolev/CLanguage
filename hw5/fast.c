@@ -10,7 +10,7 @@ typedef struct Node {
 void create_first_element(n){
 
 
-    for(int i = 0; i < 7; i++) {
+    for(int i = 0; i < 11; i++) {
         push(&n, i + 1);
     }
 
@@ -31,29 +31,11 @@ void printFromTail(const Node *head) {
 }
 
 int main() {
+
     Node *head = NULL;
 
-
-    char command;
-
-    while(1){
-        printf("Your number: \n");
-        scanf("%c", &command);
-
-        if(command == '1'){
-            printf("You chose to create first element\n");
-            create_first_element(head);
-        }
-
-        if(command == '2'){
-            printf("You chose to show all elements of the list\n");
-            printFromTail(head);
-        }
-
-    }
-
-
-
+    create_first_element(head);
+    printFromTail(head);
 
     return 0;
 }
