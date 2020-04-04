@@ -37,7 +37,7 @@ int main()
 
         printf("Please, enter the command number here: \n");
         scanf("%c", &command);
-        printf("\n");
+        printf("\n"); //new
 
         if(command == '1'){
             printf("You chose : Create the first element of a singly linked list\n");
